@@ -1,5 +1,5 @@
 # SpringBoot-Projects:
-- This Repository contains Projects in Spring Boot.
+- This repository hosts a collection of projects developed using Spring Boot, a powerful framework for building Java applications.
 
 # Taskify - Simple Task Management API with Spring Boot
 
