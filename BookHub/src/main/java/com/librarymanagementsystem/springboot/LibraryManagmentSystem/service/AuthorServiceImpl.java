@@ -2,6 +2,7 @@ package com.librarymanagementsystem.springboot.LibraryManagmentSystem.service;
 
 import com.librarymanagementsystem.springboot.LibraryManagmentSystem.dao.AuthorRepository;
 import com.librarymanagementsystem.springboot.LibraryManagmentSystem.entities.Author;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,11 +28,13 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepository.findById(id);
     }
 
+    @Transactional
     @Override
     public void createUpdateAuthor(Author author) {
         authorRepository.save(author);
     }
 
+    @Transactional
     @Override
     public void deleteAuthorById(int id) {
         authorRepository.deleteById(id);
