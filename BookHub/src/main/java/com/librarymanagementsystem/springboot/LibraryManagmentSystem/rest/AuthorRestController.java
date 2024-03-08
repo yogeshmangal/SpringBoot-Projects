@@ -1,6 +1,7 @@
 package com.librarymanagementsystem.springboot.LibraryManagmentSystem.rest;
 
 import com.librarymanagementsystem.springboot.LibraryManagmentSystem.entities.Author;
+import com.librarymanagementsystem.springboot.LibraryManagmentSystem.exception.EntityNotFoundException;
 import com.librarymanagementsystem.springboot.LibraryManagmentSystem.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,10 @@ public class AuthorRestController {
 
     @GetMapping("/authors/{id}")
     public Optional<Author> findById(@PathVariable int id) {
-        return authorService.findAuthorById(id);
+        Optional<Author> author = authorService.findAuthorById(id);
+        if(author.isEmpty())
+            throw new EntityNotFoundException("Id not found " + id);
+        return author;
     }
 
     @PostMapping("/authors")
@@ -41,6 +45,9 @@ public class AuthorRestController {
 
     @DeleteMapping("/authors/{id}")
     public String deleteAuthorById(@PathVariable int id) {
+        Optional<Author> author = authorService.findAuthorById(id);
+        if(author.isEmpty())
+            throw new EntityNotFoundException("Id not found " + id);
         authorService.deleteAuthorById(id);
         return "Deleted Author Id is: " + id;
     }
