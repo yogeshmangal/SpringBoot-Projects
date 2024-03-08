@@ -13,8 +13,8 @@ public class Author {
     private int id;
     @Column(name = "name")
     private String name;
-    @Column(name = "birthday_date")
-    private Date birthdayDate;
+    @Column(name = "birth_date")
+    private Date birthDate;
     @Column(name = "nationality")
     private String nationality;
     @Column(name = "books")
@@ -24,9 +24,9 @@ public class Author {
 
     }
 
-    public Author(String name, Date birthdayDate, String nationality, String books) {
+    public Author(String name, Date birthDate, String nationality, String books) {
         this.name = name;
-        this.birthdayDate = birthdayDate;
+        this.birthDate = birthDate;
         this.nationality = nationality;
         this.books = books;
     }
@@ -47,12 +47,12 @@ public class Author {
         this.name = name;
     }
 
-    public Date getBirthdayDate() {
-        return birthdayDate;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthdayDate(Date birthdayDate) {
-        this.birthdayDate = birthdayDate;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getNationality() {
@@ -76,7 +76,7 @@ public class Author {
         return "Author{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", birthdayDate=" + birthdayDate +
+                ", birthDate=" + birthDate +
                 ", nationality='" + nationality + '\'' +
                 ", books='" + books + '\'' +
                 '}';
