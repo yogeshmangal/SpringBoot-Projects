@@ -27,7 +27,7 @@ public class BookRestController {
     public Optional<Book> findById(@PathVariable int id) {
         Optional<Book> book = bookService.findBookById(id);
         if(book.isEmpty())
-            throw new EntityNotFoundException("Id not found " + id);
+            throw new EntityNotFoundException("Book Id not found " + id);
         return book;
     }
 
@@ -48,7 +48,7 @@ public class BookRestController {
     public String deleteBookById(@PathVariable int id) {
         Optional<Book> book = bookService.findBookById(id);
         if(book.isEmpty())
-            throw new EntityNotFoundException("Id not found " + id);
+            throw new EntityNotFoundException("Book Id not found " + id);
         bookService.deleteBookById(id);
         return "Deleted Book Id is: " + id;
     }

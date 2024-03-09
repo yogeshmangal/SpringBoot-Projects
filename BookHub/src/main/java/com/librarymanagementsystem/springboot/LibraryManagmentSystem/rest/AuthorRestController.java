@@ -26,7 +26,7 @@ public class AuthorRestController {
     public Optional<Author> findById(@PathVariable int id) {
         Optional<Author> author = authorService.findAuthorById(id);
         if(author.isEmpty())
-            throw new EntityNotFoundException("Id not found " + id);
+            throw new EntityNotFoundException("Author Id not found " + id);
         return author;
     }
 
@@ -47,7 +47,7 @@ public class AuthorRestController {
     public String deleteAuthorById(@PathVariable int id) {
         Optional<Author> author = authorService.findAuthorById(id);
         if(author.isEmpty())
-            throw new EntityNotFoundException("Id not found " + id);
+            throw new EntityNotFoundException("Author Id not found " + id);
         authorService.deleteAuthorById(id);
         return "Deleted Author Id is: " + id;
     }

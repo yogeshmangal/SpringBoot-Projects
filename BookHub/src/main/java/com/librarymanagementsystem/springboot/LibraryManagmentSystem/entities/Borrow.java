@@ -15,6 +15,8 @@ public class Borrow {
     private int bookId;
     @Column(name = "user_id")
     private int userId;
+    @Column(name = "library_id")
+    private int libraryId;
     @Column(name = "borrow_date")
     private Date borrowDate;
     @Column(name = "return_date")
@@ -30,9 +32,10 @@ public class Borrow {
 
     }
 
-    public Borrow(int bookId, int userId, Date borrowDate, Date returnDate, Date actualReturnDate, String status, int fineAmount) {
+    public Borrow(int bookId, int userId, int libraryId, Date borrowDate, Date returnDate, Date actualReturnDate, String status, int fineAmount) {
         this.bookId = bookId;
         this.userId = userId;
+        this.libraryId = libraryId;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
         this.actualReturnDate = actualReturnDate;
@@ -62,6 +65,14 @@ public class Borrow {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public int getLibraryId() {
+        return libraryId;
+    }
+
+    public void setLibraryId(int libraryId) {
+        this.libraryId = libraryId;
     }
 
     public Date getBorrowDate() {
@@ -110,6 +121,7 @@ public class Borrow {
                 "id=" + id +
                 ", bookId=" + bookId +
                 ", userId=" + userId +
+                ", libraryId=" + libraryId +
                 ", borrowDate=" + borrowDate +
                 ", returnDate=" + returnDate +
                 ", actualReturnDate=" + actualReturnDate +

@@ -17,19 +17,19 @@ public class Library {
     private String description;
     @Column(name = "contact_number")
     private String contactNumber;
-    @Column(name = "books")
-    private String books;
+    @Column(name = "number_Of_Books")
+    private int numberOfBooks;
 
     public Library() {
 
     }
 
-    public Library(String name, String location, String description, String contactNumber, String books) {
+    public Library(String name, String location, String description, String contactNumber, int numberOfBooks) {
         this.name = name;
         this.location = location;
         this.description = description;
         this.contactNumber = contactNumber;
-        this.books = books;
+        this.numberOfBooks = numberOfBooks;
     }
 
     public int getId() {
@@ -72,12 +72,12 @@ public class Library {
         this.contactNumber = contactNumber;
     }
 
-    public String getBooks() {
-        return books;
+    public int getNumberOfBooks() {
+        return numberOfBooks;
     }
 
-    public void setBooks(String books) {
-        this.books = books;
+    public void setNumberOfBooks(int numberOfBooks) {
+        this.numberOfBooks = numberOfBooks;
     }
 
     @Override
@@ -88,7 +88,7 @@ public class Library {
                 ", location='" + location + '\'' +
                 ", description='" + description + '\'' +
                 ", contactNumber='" + contactNumber + '\'' +
-                ", books='" + books + '\'' +
+                ", numberOfBooks='" + numberOfBooks + '\'' +
                 '}';
     }
 }

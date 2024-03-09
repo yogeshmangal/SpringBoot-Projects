@@ -7,7 +7,10 @@ import java.util.Optional;
 
 public interface BookService {
     List<Book> findAll();
+
     Optional<Book> findBookById(int id);
+
     void createUpdateBook(Book book);
+
     void deleteBookById(int id);
 }
