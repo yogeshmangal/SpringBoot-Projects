@@ -2,6 +2,7 @@ package com.librarymanagementsystem.springboot.LibraryManagmentSystem.service;
 
 import com.librarymanagementsystem.springboot.LibraryManagmentSystem.dao.UserRepository;
 import com.librarymanagementsystem.springboot.LibraryManagmentSystem.entities.User;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,11 +28,13 @@ public class UserServiceImpl implements UserService {
         return userRepository.findById(id);
     }
 
+    @Transactional
     @Override
     public void createUpdateUser(User user) {
         userRepository.save(user);
     }
 
+    @Transactional
     @Override
     public void deleteUserById(int id) {
         userRepository.deleteById(id);
