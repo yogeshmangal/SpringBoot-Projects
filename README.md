@@ -1,6 +1,10 @@
 # SpringBoot-Projects:
 - This repository hosts a collection of projects developed using Spring Boot, a powerful framework for building Java applications.
 
+# s3-file-manager
+
+- This is a Spring Boot application that provides REST endpoints to upload, download, list, and delete files in an S3-compatible storage. It uses LocalStack to simulate AWS S3 locally, enabling easy development and testing without needing actual AWS resources.
+
 # BookHub: Library Management System
 
 - BookHub is a comprehensive Library Management System designed to efficiently manage books, authors, borrowers, libraries, and users. It provides a set of RESTful APIs built using Spring Boot to handle CRUD operations for each entity, allowing users to perform various tasks such as adding, retrieving, updating, and deleting records.
