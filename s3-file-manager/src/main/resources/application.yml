@@ -1,0 +1,13 @@
+aws:
+  s3:
+    bucket-name: my-local-bucket
+    region: us-east-1
+    endpoint: http://localhost:4566
+    access-key: test
+    secret-key: test
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
